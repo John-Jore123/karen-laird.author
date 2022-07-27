@@ -1,0 +1,82 @@
+@use "../abstracts/base.scss" as *;
+
+// @include media_breakpoint(laptop)
+// #home {
+//     @apply sm:pt-[72px] md:rounded-bl-[3rem] md:pt-[104px]
+// }
+
+// h1.seoFont_obj {
+//     @apply sm:text-2xl md:text-4xl lg:before:inset-y-11 
+// }
+
+
+@include media_breakpoint(mobile) {
+    #about::before {
+        @apply -right-36
+    }
+
+    #order::before {
+        background-position-x: 20rem !important;
+    }
+}
+
+@include media_breakpoint(tablet) {
+    /*--------------------------------------------------------------
+    # Disable aos animation delay on mobile devices
+    --------------------------------------------------------------*/
+    [data-aos-delay] {
+        transition-delay: 0 !important;
+    }
+
+    header {
+        @apply bg-minsk-800 overflow-visible;
+    }
+
+    footer .wrapper-content-float {
+        @apply relative flex justify-around items-center
+    }
+    footer {
+        .imgFloat {
+            &___leftObj {
+                height: 5rem !important;
+                @apply relative top-0 left-0
+            }
+            &___rightObj {
+                height: 10rem !important;
+                @apply relative top-0 right-0
+            }
+        }
+    }
+
+    section {
+        &#home {
+            height: 50vh;
+        }
+        &#order {
+            height: auto;
+        }
+    }
+
+    #order::before {
+        width: 1080px;
+    }
+}
+
+@include media_breakpoint(laptop) {
+    footer {
+        .imgFloat {
+            &___leftObj {
+                @apply h-28
+            }
+            &___rightObj {
+                @apply h-60
+            }
+        }
+    }
+    
+    #about:before {
+        content: "";
+        top: 0 !important;
+        background-position: top !important;
+    }
+}

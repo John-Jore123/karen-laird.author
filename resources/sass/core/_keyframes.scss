@@ -1,0 +1,17 @@
+@keyframes slowShake {
+	0% {
+		transform: rotate(0deg);
+	}
+	20% {
+		transform: rotate(4deg);
+	}
+	60% {
+		transform: rotate(7deg);
+	}
+	90% {
+		transform: rotate(4deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}

@@ -1,0 +1,171 @@
+@use "../abstracts/base.scss" as *;
+
+/*--------------------------------------------------------------
+    # NAVBAR
+--------------------------------------------------------------*/
+header {
+    @apply h-full fixed top-0 left-0 bottom-0 flex items-center justify-center flex-col z-50 p-4 overflow-y-auto md:-left-[300px];
+    transition: all 1s cubic-bezier(.23,1,.32,1) !important;
+    &.active-left-0 {
+        @apply left-0
+    }
+    .nav-menu {
+        & * {
+            @apply m-0 p-0;
+        }
+        & > ul {
+            @apply space-y-4
+        }
+        & > ul > li {
+            @apply relative whitespace-nowrap
+        }
+    }
+}
+.nav-menu {
+    & a,
+    & a:focus {
+        @apply flex items-center w-full h-full rounded-full text-white font-semibold overflow-hidden opacity-50;
+        transition: 0.3s;
+        span {
+            @apply pl-4 pr-7
+        }
+    }
+    & a.active,
+    & a.active:focus,
+    & li > a.active {
+        @apply opacity-100 w-full bg-minsk-500 dark:bg-dark-600;
+        span {
+            @apply block
+        }
+    }
+    & a:hover,
+    & li:hover > a {
+        @apply opacity-100 scale-110;
+        span {
+            @apply block 
+        }
+    }
+}
+@media (min-width: 992px) {
+    .nav-menu {
+        & a,
+        & a:focus {
+            @apply w-16;
+            span {
+                @apply hidden
+            }
+        }
+    }
+}
+/*--------------------------------------------------------------
+    # HAMBURGER
+--------------------------------------------------------------*/
+.hamburger-navbar-icon-toggler {
+    @apply absolute top-4 -right-24 z-50;
+    transition: all 1s cubic-bezier(.23,1,.32,1) !important;
+    &.is-active {
+        transition: all 1s cubic-bezier(.23,1,.32,1);
+        right: 0;
+    }
+}
+.hamburger-inner,
+.hamburger-inner::before, 
+.hamburger-inner::after {
+    background: #1c183f !important
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background: #756ea6 !important
+}
+
+/*--------------------------------------------------------------
+    # Preloader
+--------------------------------------------------------------*/
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+} 
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #d4850f;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+}
+  
+@-webkit-keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CONTAINER
+section {
+    @include sectionFlex;
+    @apply h-screen relative overflow-hidden
+}
+
+// TEXT
+p {
+    @apply font-medium whitespace-normal break-words
+}

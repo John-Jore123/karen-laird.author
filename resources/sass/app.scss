@@ -1,0 +1,108 @@
+@use "sass:math";
+@forward "abstracts/base.scss";
+@forward "core/core.scss";
+@forward "pages/template.scss";
+@forward "util/page.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply font-lead;
+    }
+    ::-webkit-scrollbar {
+        @apply w-2.5;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        @apply bg-minsk-400 dark:bg-dark-400 shadow-inner rounded;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        @apply bg-white rounded;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-minsk-900 dark:bg-minsk-500;
+    }
+}
+@layer components {
+    // #top {
+    //     @apply top-[16px] left-[10px]
+    // }
+    // #bottom {
+    //     @apply top-[43px] left-[10px]
+    // }
+      
+    // path, line {
+    //     @apply stroke-black dark:stroke-white;
+    //     stroke-linecap: round;
+    // }
+      
+    // // Starting values
+    // #top, #bottom {
+    //     transform-origin: 34px 2px;
+    //     transform: rotate( 0deg ); // to prevent pixelatedness
+    //     transition: all 1s * .5 cubic-bezier(.8, -1.1, .5, 1.9); // x to = animation
+    // }
+    // #circle {
+    //     stroke-dasharray: 1 100 32 300; // 32 is the hamburger size
+    //     stroke-dashoffset: 101; // setting up a gap to swipe in from the left
+    //     transition: all 1s ease; // - to () animation
+    // }
+    
+    //   // End values (animation done by transitions)
+    // .hamburglar.is-closed {
+    //     // The circle animation is done by changing two things:
+    //     // - a new 100px gap is swiped in from the left by changing offset
+    //     // - the 'burger' dash is increased from 32px to 190px
+    //     border-radius: 32px;
+    //     #circle {
+    //         stroke-dasharray: 1 100 190 300;
+    //         stroke-dashoffset: 1;
+    //         stroke-width: 0;
+    //     }
+        
+    //     // Rotate the top and bottom 'bum' to make a cross, and shift them to
+    //     // the right a little bit
+    //     #top {
+    //         transform: translateX( -4.5px ) rotate( -45deg );
+    //         @apply top-[19px] left-[27px] w-9
+    //     }
+    //     #bottom {
+    //         transform: translateX( -4.5px ) rotate( 45deg );
+    //         @apply top-[41px] left-[28px] w-9
+    //     }
+    // }
+}
+@layer utilities {
+
+}
+
+// NAVBAR
+// header {
+//     transition: transform 0.3s ease, visibility 0s 0.3s linear;
+//     transform: translate3d(0, 0, 0);
+// }
+// .navbarHide {
+//     transform: translate3d(0, -100%, 0);
+// }
+// #mobile-menu {
+//     animation: navigationAnim all 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+// }
+
+
+
+// @keyframes navigationAnim {
+//     from {
+//         top: 200px;
+//         opacity: 0;
+//     } to {
+//         top: 250px;
+//         opacity: 1;
+//     }
+// }

@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+@mixin sectionFlex {
+    @apply flex items-center justify-center;
+}
+
+@mixin media_breakpoint($breakpoints) {
+    @if map-has-key($breakpoint, $breakpoints) {
+        $value: map-get($breakpoint, $breakpoints);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    @warn "Unknown `#{$breakpoints}` in $breakpoint";
+}

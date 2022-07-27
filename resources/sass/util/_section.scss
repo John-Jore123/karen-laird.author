@@ -1,0 +1,50 @@
+@use "../abstracts/base.scss" as *;
+
+#about {
+    // content: "";
+    // position: absolute !important;
+    // width: 1200px;
+    // height: 100%;
+    // background: url(/images/author-bg.png) no-repeat;
+    // background-size: 100%;
+    // background-position: center;
+    // top: -44px;
+    // z-index: 1;
+    @apply before:block before:bg-first-hero-image before:absolute before:w-[1200px] before:h-full before:bg-contain before:bg-no-repeat before:bg-center before:-top-4 before:z-10
+}
+
+#book {
+    // content: "";
+    // position: absolute !important;
+    // width: 1200px;
+    // height: 100%;
+    // background: url(/images/book-bg.png) no-repeat;
+    // background-size: 100%;
+    // background-position: center;
+    // z-index: 1;
+    @apply before:block before:bg-second-hero-image before:absolute before:w-[1200px] before:h-full before:bg-contain before:bg-no-repeat before:bg-center before:z-10
+}
+
+#order {
+    // content: "";
+    // position: absolute !important;
+    // width: 1200px;
+    // height: 100%;
+    // background: url(/images/book-bg.png) no-repeat;
+    // background-size: 100%;
+    // background-position: center;
+    // z-index: 1;
+    @apply before:block before:bg-second-hero-image before:absolute before:w-[1200px] before:h-full before:bg-contain before:bg-no-repeat before:bg-center before:z-10
+}
+
+#contact {
+    // content: "";
+    // position: absolute !important;
+    // width: 1200px;
+    // height: 100%;
+    // background: url(/images/book-bg.png) no-repeat;
+    // background-size: 100%;
+    // background-position: center;
+    // z-index: 1;
+    @apply before:block before:bg-second-hero-image before:absolute before:w-[1200px] before:h-full before:bg-contain before:bg-no-repeat before:bg-center before:z-10
+}
