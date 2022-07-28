@@ -396,12 +396,18 @@ $(function () {
     var mobile = $('#phoneJS').val();
     var msg = $('#messageJS').val();
 
+    if (!mailValidator(mail)) {
+      $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.').css("color", "#eb8188");
+      $('#emailJS').css("border-bottom-color", "#eb8188");
+      validateEmail();
+    }
+
     if (!fname || !msg || !mail) {
       if (fname == '') {
         validateName();
       }
 
-      if (!mail) {
+      if (mail == '') {
         validateEmail();
       }
 
