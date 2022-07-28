@@ -1,3 +1,5 @@
+const { isEmpty } = require('lodash');
+
 window.$ = window.JQuery = require('jquery')
 
 /*--------------------------------------------------------------
@@ -274,3 +276,87 @@ headerObj.hamburger.addEventListener('click', () => {
 //         });
 //     })
 // })
+
+
+
+
+function validateName() {
+    $('#nameJS').keyup(function() {
+        var fname = $('#nameJS').val()
+        var x = fname.trim()
+        var char = x.replace(/\s+/gi, '').length;
+        // console.log(char)
+        if(char > 0) {
+            $("label:first").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Your name.').css("color", "#1c183f")
+            $('#nameJS').css("border-bottom-color", "#1c183f")
+        }
+    })
+
+    $('#nameJS').keyup(function(){
+        var fname = $('#nameJS').val()
+        var x = fname.trim()
+        var char = x.replace(/\s+/gi, '').length;
+        // console.log(char)
+        if(char == 0) {
+            $("label:first").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188")
+            $('#nameJS').css("border-bottom-color", "#eb8188")
+        }
+    })
+}  
+
+function validateTextarea() {
+    $('#messageJS').keyup(function() {
+        var msg = $('#messageJS').val()
+        var x = msg.trim()
+        var char = x.replace(/\s+/gi, '').length;
+        // console.log(char)
+        if(char > 0) {
+            $("label:last").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Message.').css("color", "#1c183f")
+            $('#messageJS').css("border-bottom-color", "#1c183f")
+        } else {
+            $("label:last").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
+            $('#messageJS').css("border-bottom-color", "#eb8188")
+        }
+    })
+
+    // $('#messageJS').keyup(function(){
+    //     var msg = $('#messageJS').val()
+    //     var x = msg.trim()
+    //     var char = x.replace(/\s+/gi, '').length;
+    //     // console.log(char)
+    //     if(char == 0) {
+    //         $("label:last").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
+    //         $('#messageJS').css("border-bottom-color", "#eb8188")
+    //     }
+    // })
+}
+
+
+$(function() {
+
+    validateName()
+    validateTextarea()
+
+    var fname = $('#nameJS').val()
+    var mail = $('#emailJS')
+    var mobile = $('#phoneJS')
+    var msg = $('#messageJS')
+
+    $("#contactBTN").on('click', function(event) { 
+        event.preventDefault()
+        // $('#name').attr("placeholder", " ")
+
+        // if(fname == "") {
+        //     $("label:first").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188")
+        //     $('#nameJS').css("border-bottom-color", "#eb8188")
+        // } 
+        if(msg == "") {
+            $("label").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
+            $('textarea').css("border-bottom-color", "#eb8188")
+        }
+        
+        else {
+           
+        }
+    });
+});
