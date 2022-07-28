@@ -199,16 +199,6 @@ headerObj.hamburger.addEventListener('click', () => {
 /*--------------------------------------------------------------
 # FORM
 --------------------------------------------------------------*/
-// const conBTN = document.querySelector('#contactBTN')
-// conBTN.addEventListener('click', () => {
-//     var name = $('#name').val();
-//     var email = $('#email').val();
-//     var phone = $('#phone').val();
-//     var msg = $('#message').val();
-
-
-// })
-
 // if($("#contact_form").length > 0) {
 //     $('#contact_form').validate({
 //         rules:{
@@ -279,84 +269,110 @@ headerObj.hamburger.addEventListener('click', () => {
 
 
 
+// $('#name').attr("placeholder", " ")
 
 function validateName() {
+    $("#nameLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188")
+    $('#nameJS').css("border-bottom-color", "#eb8188")
+
     $('#nameJS').keyup(function() {
         var fname = $('#nameJS').val()
         var x = fname.trim()
         var char = x.replace(/\s+/gi, '').length;
         // console.log(char)
         if(char > 0) {
-            $("label:first").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Your name.').css("color", "#1c183f")
+            $("#nameLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Your name.').css("color", "#1c183f")
             $('#nameJS').css("border-bottom-color", "#1c183f")
-        }
-    })
-
-    $('#nameJS').keyup(function(){
-        var fname = $('#nameJS').val()
-        var x = fname.trim()
-        var char = x.replace(/\s+/gi, '').length;
-        // console.log(char)
-        if(char == 0) {
-            $("label:first").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188")
+        } else {
+            $("#nameLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188")
             $('#nameJS').css("border-bottom-color", "#eb8188")
         }
     })
-}  
-
+} 
 function validateTextarea() {
+    $("#messageLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
+    $('#messageJS').css("border-bottom-color", "#eb8188")
+    
     $('#messageJS').keyup(function() {
         var msg = $('#messageJS').val()
         var x = msg.trim()
         var char = x.replace(/\s+/gi, '').length;
         // console.log(char)
         if(char > 0) {
-            $("label:last").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Message.').css("color", "#1c183f")
+            $("#messageLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Message.').css("color", "#1c183f")
             $('#messageJS').css("border-bottom-color", "#1c183f")
         } else {
-            $("label:last").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
+            $("#messageLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
             $('#messageJS').css("border-bottom-color", "#eb8188")
         }
     })
+} 
 
-    // $('#messageJS').keyup(function(){
-    //     var msg = $('#messageJS').val()
-    //     var x = msg.trim()
-    //     var char = x.replace(/\s+/gi, '').length;
-    //     // console.log(char)
-    //     if(char == 0) {
-    //         $("label:last").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
-    //         $('#messageJS').css("border-bottom-color", "#eb8188")
-    //     }
-    // })
+
+function mailValidator(email) {
+	var filter = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if (!filter.test(email)) {
+		return false;
+	} else {
+		return true;
+	}
 }
+
+function validateEmail() {
+    $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.').css("color", "#eb8188")
+    $('#emailJS').css("border-bottom-color", "#eb8188")
+
+    $('#emailJS').keyup(function() {
+        var email = $('#emailJS').val()
+        var x = email.trim()
+        var char = x.replace(/\s+/gi, '').length;
+        // console.log(char)
+
+        // if(!email) {
+            if(char > 0) {
+                $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Your email.').css("color", "#1c183f")
+                $('#emailJS').css("border-bottom-color", "#1c183f")
+            }
+            // if(!mailValidator(email)) {
+            //     $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.').css("color", "#eb8188")
+            //     $('#emailJS').css("border-bottom-color", "#eb8188")
+            // }
+        // } 
+        else {
+            $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.').css("color", "#eb8188")
+            $('#emailJS').css("border-bottom-color", "#eb8188")
+        }
+        
+    })
+} 
+
 
 
 $(function() {
 
-    validateName()
-    validateTextarea()
-
-    var fname = $('#nameJS').val()
-    var mail = $('#emailJS')
-    var mobile = $('#phoneJS')
-    var msg = $('#messageJS')
 
     $("#contactBTN").on('click', function(event) { 
         event.preventDefault()
-        // $('#name').attr("placeholder", " ")
 
-        // if(fname == "") {
-        //     $("label:first").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188")
-        //     $('#nameJS').css("border-bottom-color", "#eb8188")
-        // } 
-        if(msg == "") {
-            $("label").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
-            $('textarea').css("border-bottom-color", "#eb8188")
+        var fname = $('#nameJS').val()
+        var mail = $('#emailJS').val()
+        var mobile = $('#phoneJS').val()
+        var msg = $('#messageJS').val()
+
+        if(!fname || !msg || !mail) {
+            if(fname == '') {
+                validateName()
+            } 
+            if(!mail) {
+                validateEmail()
+            }
+            if(msg == '') {
+                validateTextarea()
+            }
+        } else {
+            alert()
         }
+
         
-        else {
-           
-        }
     });
 });
