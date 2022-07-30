@@ -318,76 +318,6 @@ headerObj.hamburger.addEventListener('click', function () {
 // })
 // $('#name').attr("placeholder", " ")
 
-function validateName() {
-  $("#nameLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188");
-  $('#nameJS').css("border-bottom-color", "#eb8188");
-  $('#nameJS').keyup(function () {
-    var fname = $('#nameJS').val();
-    var x = fname.trim();
-    var _char = x.replace(/\s+/gi, '').length; // console.log(char)
-
-    if (_char > 0) {
-      $("#nameLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Your name.').css("color", "#1c183f");
-      $('#nameJS').css("border-bottom-color", "#1c183f");
-    } else {
-      $("#nameLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188");
-      $('#nameJS').css("border-bottom-color", "#eb8188");
-    }
-  });
-}
-
-function validateTextarea() {
-  $("#messageLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188");
-  $('#messageJS').css("border-bottom-color", "#eb8188");
-  $('#messageJS').keyup(function () {
-    var msg = $('#messageJS').val();
-    var x = msg.trim();
-    var _char2 = x.replace(/\s+/gi, '').length; // console.log(char)
-
-    if (_char2 > 0) {
-      $("#messageLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Message.').css("color", "#1c183f");
-      $('#messageJS').css("border-bottom-color", "#1c183f");
-    } else {
-      $("#messageLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188");
-      $('#messageJS').css("border-bottom-color", "#eb8188");
-    }
-  });
-}
-
-function mailValidator(email) {
-  var filter = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-  if (!filter.test(email)) {
-    return false;
-  } else {
-    return true;
-  }
-}
-
-function validateEmail() {
-  $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.').css("color", "#eb8188");
-  $('#emailJS').css("border-bottom-color", "#eb8188");
-  $('#emailJS').keyup(function () {
-    var email = $('#emailJS').val();
-    var x = email.trim();
-    var _char3 = x.replace(/\s+/gi, '').length; // console.log(char)
-    // if(!email) {
-
-    if (_char3 > 0) {
-      $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Your email.').css("color", "#1c183f");
-      $('#emailJS').css("border-bottom-color", "#1c183f");
-    } // if(!mailValidator(email)) {
-    //     $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.').css("color", "#eb8188")
-    //     $('#emailJS').css("border-bottom-color", "#eb8188")
-    // }
-    // } 
-    else {
-      $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.').css("color", "#eb8188");
-      $('#emailJS').css("border-bottom-color", "#eb8188");
-    }
-  });
-}
-
 $(function () {
   $("#contactBTN").on('click', function (event) {
     event.preventDefault();
@@ -397,9 +327,8 @@ $(function () {
     var msg = $('#messageJS').val();
 
     if (!mailValidator(mail)) {
-      $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.').css("color", "#eb8188");
-      $('#emailJS').css("border-bottom-color", "#eb8188");
-      validateEmail();
+      $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.');
+      $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
     }
 
     if (!fname || !msg || !mail) {
@@ -408,17 +337,95 @@ $(function () {
       }
 
       if (mail == '') {
+        $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.');
+        $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
         validateEmail();
       }
 
       if (msg == '') {
         validateTextarea();
       }
+    } else if (!mailValidator(mail)) {
+      $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.');
+      $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
+      validateEmail();
     } else {
       alert();
     }
   });
 });
+
+function validateName() {
+  $("#nameLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.');
+  $('#nameJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
+  $('#nameJS').keyup(function () {
+    var fname = $('#nameJS').val();
+    var x = fname.trim();
+    var _char = x.replace(/\s+/gi, '').length; // console.log(char)
+
+    if (_char > 0) {
+      $("#nameLabel").removeClass("text-red-300 dark:text-red-300").addClass("text-white").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Your name.');
+      $('#nameJS').removeClass("border-red-300 dark:border-red-300").addClass("border-white");
+    } else {
+      $("#nameLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.');
+      $('#nameJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
+    }
+  });
+}
+
+function validateTextarea() {
+  $("#messageLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.');
+  $('#messageJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
+  $('#messageJS').keyup(function () {
+    var msg = $('#messageJS').val();
+    var x = msg.trim();
+    var _char2 = x.replace(/\s+/gi, '').length; // console.log(char)
+
+    if (_char2 > 0) {
+      $("#messageLabel").removeClass("text-red-300 dark:text-red-300").addClass("text-white").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Message.');
+      $('#messageJS').removeClass("border-red-300 dark:border-red-300").addClass("border-white");
+    } else {
+      $("#messageLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.');
+      $('#messageJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
+    }
+  });
+}
+
+function validateEmail() {
+  $('#emailJS').keyup(function () {
+    var mail = $('#emailJS').val();
+    var x = mail.trim();
+    var _char3 = x.replace(/\s+/gi, '').length; // console.log(char)
+
+    if (_char3 > 0) {
+      $("#emailLabel").removeClass("text-red-300 dark:text-red-300").addClass("text-white").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Your email.');
+      $('#emailJS').removeClass("border-red-300 dark:border-red-300").addClass("border-white");
+    } else {
+      $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.');
+      $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
+    }
+  });
+}
+
+function mailValidator(mail) {
+  var filter = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+  if (!filter.test(mail)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function phoneValidator(phone) {
+  var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+
+  if (!filter.test(phone)) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 /***/ }),
 

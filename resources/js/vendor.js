@@ -108,62 +108,62 @@ function darkMode() {
 --------------------------------------------------------------*/
 $(function() {
 
-  const select = (el, all = false) => {
-      el = el.trim()
-      if (all) {
-          return [...document.querySelectorAll(el)]
-      } else {
-          return document.querySelector(el)
-      }
-  }
-  const on = (type, el, listener, all = false) => {
-      let selectEl = select(el, all)
-      if (selectEl) {
-          if (all) {
-              selectEl.forEach(e => e.addEventListener(type, listener))
-          } else {
-              selectEl.addEventListener(type, listener)
-          }
-      }
-  }
-  const onscroll = (el, listener) => {
-      el.addEventListener('scroll', listener)
-  }
+    const select = (el, all = false) => {
+        el = el.trim()
+        if (all) {
+            return [...document.querySelectorAll(el)]
+        } else {
+            return document.querySelector(el)
+        }
+    }
+    const on = (type, el, listener, all = false) => {
+        let selectEl = select(el, all)
+        if (selectEl) {
+            if (all) {
+                selectEl.forEach(e => e.addEventListener(type, listener))
+            } else {
+                selectEl.addEventListener(type, listener)
+            }
+        }
+    }
+    const onscroll = (el, listener) => {
+        el.addEventListener('scroll', listener)
+    }
 
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-      let position = window.scrollY + 200
-      navbarlinks.forEach(navbarlink => {
-          if (!navbarlink.hash) return
-              let section = select(navbarlink.hash)
-          if (!section) return
-          if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-              navbarlink.classList.add('active')
-          } else {
-              navbarlink.classList.remove('active')
-          }
-      })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
+    let navbarlinks = select('#navbar .scrollto', true)
+    const navbarlinksActive = () => {
+        let position = window.scrollY + 200
+        navbarlinks.forEach(navbarlink => {
+            if (!navbarlink.hash) return
+                let section = select(navbarlink.hash)
+            if (!section) return
+            if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+                navbarlink.classList.add('active')
+            } else {
+                navbarlink.classList.remove('active')
+            }
+        })
+    }
+    window.addEventListener('load', navbarlinksActive)
+    onscroll(document, navbarlinksActive)
 
-  const selectHeader = document.querySelector('header')
-  let backtotop = select('#back-to-top');
-  if (backtotop) {
-      const toggleBacktotop = () => {
-          if (window.scrollY > 100) {
-              backtotop.classList.remove('hidden')
-          } else {
-              backtotop.classList.add('hidden')
-          }
-      }
-      window.addEventListener('load', toggleBacktotop)
-      onscroll(document, toggleBacktotop)
-  }
+    const selectHeader = document.querySelector('header')
+    let backtotop = select('#back-to-top');
+    if (backtotop) {
+        const toggleBacktotop = () => {
+            if (window.scrollY > 100) {
+                backtotop.classList.remove('hidden')
+            } else {
+                backtotop.classList.add('hidden')
+            }
+        }
+        window.addEventListener('load', toggleBacktotop)
+        onscroll(document, toggleBacktotop)
+    }
 
-/*--------------------------------------------------------------
-# PRELOADER
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+    # PRELOADER
+    --------------------------------------------------------------*/
     let preloader = select('#preloader');
     if (preloader) {
             window.addEventListener('load', () => {
@@ -186,14 +186,14 @@ if (hamburgers.length > 0) {
 } 
 
 const headerObj = {
-  header: document.querySelector('header'),
-  hamburger: document.querySelector('.hamburger-navbar-icon-toggler'),
+    header: document.querySelector('header'),
+    hamburger: document.querySelector('.hamburger-navbar-icon-toggler'),
 }
 headerObj.hamburger.addEventListener('click', () => {
-  headerObj.header.classList.toggle('active-left-0')
-  if($(this).hasClass('is-active')) {
-    headerObj.hamburger.classList.toggle('is-active')
-  }
+    headerObj.header.classList.toggle('active-left-0')
+    if($(this).hasClass('is-active')) {
+        headerObj.hamburger.classList.toggle('is-active')
+    }
 })
 
 /*--------------------------------------------------------------
@@ -270,86 +270,7 @@ headerObj.hamburger.addEventListener('click', () => {
 
 
 // $('#name').attr("placeholder", " ")
-
-function validateName() {
-    $("#nameLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188")
-    $('#nameJS').css("border-bottom-color", "#eb8188")
-
-    $('#nameJS').keyup(function() {
-        var fname = $('#nameJS').val()
-        var x = fname.trim()
-        var char = x.replace(/\s+/gi, '').length;
-        // console.log(char)
-        if(char > 0) {
-            $("#nameLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Your name.').css("color", "#1c183f")
-            $('#nameJS').css("border-bottom-color", "#1c183f")
-        } else {
-            $("#nameLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.').css("color", "#eb8188")
-            $('#nameJS').css("border-bottom-color", "#eb8188")
-        }
-    })
-} 
-function validateTextarea() {
-    $("#messageLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
-    $('#messageJS').css("border-bottom-color", "#eb8188")
-    
-    $('#messageJS').keyup(function() {
-        var msg = $('#messageJS').val()
-        var x = msg.trim()
-        var char = x.replace(/\s+/gi, '').length;
-        // console.log(char)
-        if(char > 0) {
-            $("#messageLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Message.').css("color", "#1c183f")
-            $('#messageJS').css("border-bottom-color", "#1c183f")
-        } else {
-            $("#messageLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.').css("color", "#eb8188")
-            $('#messageJS').css("border-bottom-color", "#eb8188")
-        }
-    })
-} 
-
-
-function mailValidator(email) {
-	var filter = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	if (!filter.test(email)) {
-		return false;
-	} else {
-		return true;
-	}
-}
-
-function validateEmail() {
-    $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.').css("color", "#eb8188")
-    $('#emailJS').css("border-bottom-color", "#eb8188")
-
-    $('#emailJS').keyup(function() {
-        var email = $('#emailJS').val()
-        var x = email.trim()
-        var char = x.replace(/\s+/gi, '').length;
-        // console.log(char)
-
-        // if(!email) {
-            if(char > 0) {
-                $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Your email.').css("color", "#1c183f")
-                $('#emailJS').css("border-bottom-color", "#1c183f")
-            }
-            // if(!mailValidator(email)) {
-            //     $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.').css("color", "#eb8188")
-            //     $('#emailJS').css("border-bottom-color", "#eb8188")
-            // }
-        // } 
-        else {
-            $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.').css("color", "#eb8188")
-            $('#emailJS').css("border-bottom-color", "#eb8188")
-        }
-        
-    })
-} 
-
-
-
 $(function() {
-
 
     $("#contactBTN").on('click', function(event) { 
         event.preventDefault()
@@ -360,9 +281,8 @@ $(function() {
         var msg = $('#messageJS').val()
 
         if(!mailValidator(mail)) {
-            $("#emailLabel").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.').css("color", "#eb8188")
-            $('#emailJS').css("border-bottom-color", "#eb8188")
-            validateEmail()
+            $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.')
+            $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
         }
 
         if(!fname || !msg || !mail) {
@@ -370,11 +290,17 @@ $(function() {
                 validateName()
             } 
             if(mail == '') {
+                $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.')
+                $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
                 validateEmail()
             }
             if(msg == '') {
                 validateTextarea()
             }
+        } else if(!mailValidator(mail)) {
+            $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.')
+            $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+            validateEmail()
         } else {
             alert()
         }
@@ -382,3 +308,71 @@ $(function() {
         
     });
 });
+
+function validateName() {
+    $("#nameLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.')
+    $('#nameJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+
+    $('#nameJS').keyup(function() {
+        var fname = $('#nameJS').val()
+        var x = fname.trim()
+        var char = x.replace(/\s+/gi, '').length;
+        // console.log(char)
+        if(char > 0) {
+            $("#nameLabel").removeClass("text-red-300 dark:text-red-300").addClass("text-white").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Your name.')
+            $('#nameJS').removeClass("border-red-300 dark:border-red-300").addClass("border-white")
+        } else {
+            $("#nameLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">person</i> Required name.')
+            $('#nameJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+        }
+    })
+} 
+function validateTextarea() {
+    $("#messageLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.')
+    $('#messageJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+    
+    $('#messageJS').keyup(function() {
+        var msg = $('#messageJS').val()
+        var x = msg.trim()
+        var char = x.replace(/\s+/gi, '').length;
+        // console.log(char)
+        if(char > 0) {
+            $("#messageLabel").removeClass("text-red-300 dark:text-red-300").addClass("text-white").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Message.')
+            $('#messageJS').removeClass("border-red-300 dark:border-red-300").addClass("border-white")
+        } else {
+            $("#messageLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">edit</i> Required message.')
+            $('#messageJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+        }
+    })
+}
+function validateEmail() {
+    $('#emailJS').keyup(function() {
+        var mail = $('#emailJS').val()
+        var x = mail.trim()
+        var char = x.replace(/\s+/gi, '').length;
+        // console.log(char)
+        if(char > 0) {
+            $("#emailLabel").removeClass("text-red-300 dark:text-red-300").addClass("text-white").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Your email.')
+            $('#emailJS').removeClass("border-red-300 dark:border-red-300").addClass("border-white")
+        } else {
+            $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.')
+            $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+        }
+    })
+} 
+function mailValidator(mail) {
+	var filter = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if (!filter.test(mail)) {
+		return false;
+	} else {
+		return true;
+	}
+}
+function phoneValidator(phone) {
+    var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+    if(!filter.test(phone)) {
+        return false;
+    } else {
+        return true;
+    }
+}  
