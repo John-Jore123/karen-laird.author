@@ -26,9 +26,11 @@ mix.js('resources/js/app.js', '/js')
     .js('node_modules/sweetalert2/dist/sweetalert2.min.js', '/js')
     .js('node_modules/@material-tailwind/html/scripts/collapse.js' , '/js')
     .js('node_modules/@material-tailwind/html/scripts/ripple.js' , '/js')
+    .js('node_modules/intl-tel-input/build/js/utils.js', '/js')
     .css('node_modules/aos/dist/aos.css', '/css')
     .css('node_modules/sweetalert2/dist/sweetalert2.min.css', '/css')
     .css('node_modules/hamburgers/dist/hamburgers.min.css', '/css')
+    .css('node_modules/intl-tel-input/build/css/intlTelInput.min.css', '/css')
     .setPublicPath('public/');
 
 mix.copy('resources/images/','public/images', false)

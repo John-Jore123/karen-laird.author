@@ -4,24 +4,29 @@
             @component('components.util.error-message')
                 
             @endcomponent
-            <form action="@route('send.email')" method="POST" class="mx-4" autocomplete="off" id="email_author_form">
+            <form action="@route('send.email')" method="POST" class="mx-4" autocomplete="off" id="contactMail">
                 @csrf
                 <div class="grid gap-6 sm:grid-cols-2">
-                    <div class="relative z-0 col-span-1">
+                    <div class="relative z-0 col-span-2">
                         <x-form.input type="text" name="name" id="nameJS" tag="nameLabel" icon="person" value="{{ old('name') }}" class="dark:border-dark-600">Your name</x-form.input>
                         @error('name')
-                            <span class="text-red-500"> {{ $message }} </span>
-                        @enderror
-                    </div>
-                    <div class="relative z-0 col-span-1">
-                        <x-form.input type="text" name="phone" id="phoneJS" tag="phoneLabel" icon="phone_android" value="{{ old('phone') }}" class="dark:border-dark-600">Your phone</x-form.input>
-                        @error('phone')
                             <span class="text-red-500"> {{ $message }} </span>
                         @enderror
                     </div>
                     <div class="relative z-0 col-span-2">
                         <x-form.input type="email" name="email" id="emailJS" tag="emailLabel" icon="email" value="{{ old('email') }}" class="dark:border-dark-600">Your email</x-form.input>
                         @error('email')
+                            <span class="text-red-500"> {{ $message }} </span>
+                        @enderror
+                    </div>
+                    <div class="relative z-10 col-span-2">
+                        {{-- <x-form.input type="tel" name="phone" id="phoneJS" tag="phoneLabel" icon="phone_android" value="{{ old('phone') }}" class="dark:border-dark-600">Your phone number</x-form.input> --}}
+
+                        <label id="phoneLabel" class="flex items-end space-x-4 absolute top-3 right-0 -z-10 text-sm text-white dark:text-dark-600">
+                            <i class="material-icons min-w-fit min-h-fit mr-2">phone_android</i></label>
+
+                        <input type="tel" name="phone" id="phoneJS" class="block w-full appearance-none border-0 border-b-2 border-white bg-transparent py-2.5 px-0 text-sm text-white focus:border-minsk-900 dark:focus:border-white focus:outline-none focus:ring-0 placeholder:text-white/50 dark:border-dark-600">
+                        @error('phone')
                             <span class="text-red-500"> {{ $message }} </span>
                         @enderror
                     </div>

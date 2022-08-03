@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/hamburgers.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/intlTelInput.min.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <body class="bg-minsk-500 dark:bg-minsk-900">
@@ -33,5 +34,6 @@
     <script src="{{ asset('js/collapse.js') }}"></script>
     <script src="{{ asset('js/ripple.js') }}"></script>
     <script src="{{ asset('js/vendor.js') }}"></script>
+    <script src="{{ asset('js/utils.js') }}"></script>
 </body>
 </html>

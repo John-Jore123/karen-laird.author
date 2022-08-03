@@ -1,5 +1,5 @@
+import intlTelInput from 'intl-tel-input';
 const { isEmpty } = require('lodash');
-
 window.$ = window.JQuery = require('jquery')
 
 /*--------------------------------------------------------------
@@ -199,114 +199,70 @@ headerObj.hamburger.addEventListener('click', () => {
 /*--------------------------------------------------------------
 # FORM
 --------------------------------------------------------------*/
-// if($("#contact_form").length > 0) {
-//     $('#contact_form').validate({
-//         rules:{
-//             name : {
-//                 required : true,
-//                 maxlength : 50
-//             },
-//             email : {
-//                 required : true,
-//                 maxlength : 50, 
-//                 email : true
-//             },
-//             phone :  {
-//                 number : true
-//             },
-//             message : {
-//                 required : true,
-//                 minlength : 1,
-//                 maxlength : 500
-//             }
-//         },
-//         messages : {
-//             name : {
-//                 required : 'Enter Name Detail',
-//                 maxlength : 'Name should not be more than 50 character'
-//             },
-//             email : {
-//                 required : 'Enter Email Detail',
-//                 email : 'Enter Valid Email Detail',
-//                 maxlength : 'Email should not be more than 50 character'
-//             },
-//             message : {
-//                 required : 'Enter Message Detail',
-//                 minlength : 'Message Details must be minimum 50 character long',
-//                 maxlength : 'Message Details must be maximum 500 character long'
-//             }
-//         }
-//     });
-// }
-
-// UNDERT_TEST
-// $(function(){
-//     $('form').on('submit', function(e) {
-//         e.preventDefault();
-
-//         $.ajax({
-//             url: $(this).attr('action'),
-//             method: $(this).attr('method'),
-//             data: new FormData(this),
-//             processData:false,
-//             dataType:'json',
-//             contentTyoe:false,
-//             beforeSend:function() {
-//                 $(document).find('span.error-text').text('')
-//             },
-//             success:function(data) {
-//                 if(data.status == 0) {
-//                     $.each(data.error, function(prefix, val) {
-//                         $('span.'+prefix+'_error').text(val[0])
-//                     });
-//                 } else {
-//                     $('email_author_form')[0].requestFullscreen()
-//                 }
-//             }
-//         });
-//     })
-// })
-
-
-
-// $('#name').attr("placeholder", " ")
 $(function() {
+    validatePhone()
 
-    $("#contactBTN").on('click', function(event) { 
-        event.preventDefault()
+    const intlPhone = document.querySelector('#phoneJS')
+    let iti = intlTelInput(intlPhone, {
+        separateDialCode:true,
+        initialCountry: 'us',
+        // onlyCountries: [ 'cn', 'us', 'ca', 'gr', 'es', 'pt', 'hu', 'fk' ]
+    })
+    window.iti = iti.isValidNumber();
+    iti.getNumber()
+    
+    // $("#contactMail").on('submit', function(e) { 
+    //     e.preventDefault()
+        // let url = $(this).attr('action');
 
-        var fname = $('#nameJS').val()
-        var mail = $('#emailJS').val()
-        var mobile = $('#phoneJS').val()
-        var msg = $('#messageJS').val()
+        // $.post(url, {
+        //         '_token': $("#token").val(),
+        //         name: $('#nameJS').val(),
+        //         email: $('#emailJS').val(),
+        //         phone: $('#phoneJS').val(),
+        //         message: $('#messageJS').val()
+        //     },
+        // function(response) {
+        //     if(response.code == 400){
+        //         console.log(response)
+        //     }
+        // })
 
-        if(!mailValidator(mail)) {
-            $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.')
-            $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
-        }
+        // let fname = $('#nameJS').val()
+        // let mail = $('#emailJS').val()
+        // let mobile = $('#phoneJS').val()
+        // let msg = $('#messageJS').val()
 
-        if(!fname || !msg || !mail) {
-            if(fname == '') {
-                validateName()
-            } 
-            if(mail == '') {
-                $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.')
-                $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
-                validateEmail()
-            }
-            if(msg == '') {
-                validateTextarea()
-            }
-        } else if(!mailValidator(mail)) {
-            $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email type.')
-            $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
-            validateEmail()
-        } else {
-            alert()
-        }
+        // if(!regEx_patterns.email.test(mail)) {
+        //     $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email format.')
+        //     $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+        // }
 
+        // if(!fname || !msg || !mail) {
+        //     if(fname == '') {
+        //         validateName()
+        //     } 
+        //     if(mail == '') {
+        //         validateEmail()
+        //     }
+        //     if(msg == '') {
+        //         validateTextarea()
+        //     }
+        // } 
+        // else if(!regEx_patterns.email.test(mail)) {
+        //     $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email format.')
+        //     $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+        //     validateEmail()
+        // } 
+        // else if(!regEx_patterns.phone.test(mobile)) {
+        //     $("#phoneLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">phone_android</i>')
+        //     $('#phoneJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+        // } 
+        // else {
+            
+        // }
         
-    });
+    // });
 });
 
 function validateName() {
@@ -345,34 +301,51 @@ function validateTextarea() {
         }
     })
 }
-function validateEmail() {
+function validateEmail() {    
+    $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.')
+    $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+
     $('#emailJS').keyup(function() {
         var mail = $('#emailJS').val()
+        var regEx = /^([a-z0-9\d_\.-]+)@([a-z0-9\d-]+)\.([a-z0-9]{2,8})(\.[a-z0-9]{2,8})?$/
         var x = mail.trim()
         var char = x.replace(/\s+/gi, '').length;
-        // console.log(char)
         if(char > 0) {
             $("#emailLabel").removeClass("text-red-300 dark:text-red-300").addClass("text-white").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Your email.')
             $('#emailJS').removeClass("border-red-300 dark:border-red-300").addClass("border-white")
-        } else {
+        } 
+        if(!regEx.test(mail)) {
+            $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email format.')
+            $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+        } 
+        if(char == "") {
             $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Required email.')
             $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
         }
     })
 } 
-function mailValidator(mail) {
-	var filter = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	if (!filter.test(mail)) {
-		return false;
-	} else {
-		return true;
-	}
+function validatePhone() {    
+    $('#phoneJS').on("keyup", function() {
+        var mobile = $('#phoneJS').val()
+        var regEx = /^([\d\s\-\+\(\)]*)$/
+        var x = mobile.trim()
+        var char = x.replace(/\s+/gi, '').length
+        
+        if(char == "") {
+            $("#phoneLabel").removeClass("text-red-300 dark:text-red-300").addClass("text-white").html('<i class="material-icons min-w-fit min-h-fit mr-2">phone_android</i>')
+            $('#phoneJS').removeClass("border-red-300 dark:border-red-300").addClass("border-white")
+        } 
+        if(regEx.test(mobile)) {
+            $("#phoneLabel").removeClass("text-red-300 dark:text-red-300").addClass("text-white").html('<i class="material-icons min-w-fit min-h-fit mr-2">phone_android</i>')
+            $('#phoneJS').removeClass("border-red-300 dark:border-red-300").addClass("border-white")
+        } else {
+            $("#phoneLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">phone_android</i> Invalid phone number.')
+            $('#phoneJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
+        }
+    })
+} 
+const regEx_patterns = {
+    email: /^([a-z0-9\d_\.-]+)@([a-z0-9\d-]+)\.([a-z0-9]{2,8})(\.[a-z0-9]{2,8})?$/,
+    phone: /^([\d\s\-\+\(\)]*)$/,
+    space: /\s+/gi
 }
-function phoneValidator(phone) {
-    var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-    if(!filter.test(phone)) {
-        return false;
-    } else {
-        return true;
-    }
-}  

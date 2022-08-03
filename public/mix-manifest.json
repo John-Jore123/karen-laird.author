@@ -1,12 +1,14 @@
 {
-    "/js/app.js": "/js/app.js?id=21430af22b5f571d41ca87251c8b8919",
-    "/js/vendor.js": "/js/vendor.js?id=b72dc5b145db34667289531e556610ba",
+    "/js/app.js": "/js/app.js?id=c27c93f9825953bad2189044f5466448",
+    "/js/vendor.js": "/js/vendor.js?id=bb16b0c3504fddf385740e3338d23396",
     "/js/aos.js": "/js/aos.js?id=cefb36bae3ee07dd843374fe53e86430",
     "/js/jquery.min.js": "/js/jquery.min.js?id=aefcd89bfe520e6e4961b23bb5c44fb0",
     "/js/sweetalert2.min.js": "/js/sweetalert2.min.js?id=ac5ff3eb8e0df4db72fe89d1cd9cbeda",
     "/js/collapse.js": "/js/collapse.js?id=8a0f3b821da774a56bb0d5e55bd598a3",
     "/js/ripple.js": "/js/ripple.js?id=fe4e1f05a3d158d37bb570bd4120f375",
-    "/css/app.css": "/css/app.css?id=59ecf41a13ea4e4f398d3e875ff5b3d0",
+    "/js/utils.js": "/js/utils.js?id=635bd20ba7f1a40f5e66b175fe74f15a",
+    "/css/app.css": "/css/app.css?id=9880fb29baa393400e5b7e0a90bc6c2b",
+    "/css/intlTelInput.min.css": "/css/intlTelInput.min.css?id=275fe3800971431e61856e1e7e16d845",
     "/css/hamburgers.min.css": "/css/hamburgers.min.css?id=c7a1bf2dbf4a785fb8ee1f91b5dd88c1",
     "/css/sweetalert2.min.css": "/css/sweetalert2.min.css?id=a2fa19b3967300e3f7c72502f66f90ff",
     "/css/aos.css": "/css/aos.css?id=62aaf7e575b14c8f11c29d3f36db2343",
@@ -29,5 +31,7 @@
     "/images/pageturner-logo-color.png": "/images/pageturner-logo-color.png?id=b5cf64e83e0428ec9c57430e07e1b6e6",
     "/images/pageturner-logo-dark.png": "/images/pageturner-logo-dark.png?id=8d41c81dcc67340e2d915588a90a1f47",
     "/images/pageturner-logo-white.png": "/images/pageturner-logo-white.png?id=1ce0a3eeb0998787153f58bc0eeff5c9",
-    "/images/pageturner.png": "/images/pageturner.png?id=e277aa11e4af92e8ee3a29abdc9172af"
+    "/images/pageturner.png": "/images/pageturner.png?id=e277aa11e4af92e8ee3a29abdc9172af",
+    "/images/vendor/intl-tel-input/build/flags.png": "/images/vendor/intl-tel-input/build/flags.png?id=4c756015aa7f7e988cca0141faa085b1",
+    "/images/vendor/intl-tel-input/build/flags@2x.png": "/images/vendor/intl-tel-input/build/flags@2x.png?id=836571eca1cbd52d4cb5c56662a2abde"
 }
