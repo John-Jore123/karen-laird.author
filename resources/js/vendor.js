@@ -208,30 +208,98 @@ $(function() {
         initialCountry: 'us',
         // onlyCountries: [ 'cn', 'us', 'ca', 'gr', 'es', 'pt', 'hu', 'fk' ]
     })
-    window.iti = iti.isValidNumber();
-    iti.getNumber()
     
-    // $("#contactMail").on('submit', function(e) { 
-    //     e.preventDefault()
-        // let url = $(this).attr('action');
-
-        // $.post(url, {
-        //         '_token': $("#token").val(),
-        //         name: $('#nameJS').val(),
-        //         email: $('#emailJS').val(),
-        //         phone: $('#phoneJS').val(),
-        //         message: $('#messageJS').val()
-        //     },
-        // function(response) {
-        //     if(response.code == 400){
-        //         console.log(response)
-        //     }
-        // })
-
+    $("#feedbackMail").on('submit', function(event) { 
+        event.preventDefault()
         // let fname = $('#nameJS').val()
         // let mail = $('#emailJS').val()
         // let mobile = $('#phoneJS').val()
         // let msg = $('#messageJS').val()
+        iti.getNumber(intlTelInputUtils.numberFormat.E164)
+        iti.isValidNumber()
+        let url = $(this).attr('data-action')
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: new FormData(this),
+            dataType: 'JSON',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success:function(data)
+            {
+                console.log(data)
+            },
+            error: function(data) 
+            {
+                console.log(data)
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+        
+        // $.ajax({
+        //     url: "/index",
+        //     type:"POST",
+        //     data:{
+        //         "_token": "{{ csrf_token() }}",
+        //         name:fname,
+        //         email:mail,
+        //         mobile:mobile,
+        //         message:msg,
+        //     },
+        //     success:function(response){
+        //         console.log(response);
+        //         if (response) {
+        //             alert(response.success); 
+        //             $("#feedbackMail")[0].reset(); 
+        //         }
+        //     },
+        //     error: function(response) {
+        //         // alert(response.responseJSON.errors.name);
+        //         // alert(response.responseJSON.errors.email);
+        //         // alert(response.responseJSON.errors.mobile);
+        //         // alert(response.responseJSON.errors.message);
+        //     }
+        // });
+
+        
+        // let url = $(this).attr('action');
+
+        // $.post(url, {
+        //     '_token': $("#token").val(),
+        //     name: $("#nameJS").val(),
+        //     email: $("#emailJS").val(),
+        //     phone: $("#phoneJS").val(),
+        //     message: $("#messageJS").val()
+        // }, function (response) {
+        //     if(response.code == 400){
+        //         $("#feedbackButton").attr('disabled', false);
+        //         let error = '<span class="alert alert-danger">'+response.msg+'</span>';
+        //         $("#res").html(error);
+        //     }else if(response.code == 200){
+        //         $("#feedbackButton").attr('disabled', false);
+        //         let success = '<span class="alert alert-success">'+response.msg+'</span>';
+        //         $("#res").html(success);
+        //     }
+        // });
+
+        
+
+        
+
+
+
 
         // if(!regEx_patterns.email.test(mail)) {
         //     $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email format.')
@@ -262,7 +330,7 @@ $(function() {
             
         // }
         
-    // });
+    });
 });
 
 function validateName() {

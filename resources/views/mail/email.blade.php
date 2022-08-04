@@ -8,14 +8,13 @@
 </head>
 <body>
   <div>
-    Name: {{ $mailData['name'] }} <br>
-    Phone: {{ $mailData['phone'] }} <br>
-    Email: {{ $mailData['email'] }} <br>
-    Message: {{ $mailData['message'] }}
-
-    {{-- {{ $data }} --}}
-
-
+    Name: {{ $emailData['name'] }} <br>
+    Phone: {{ $emailData['phone'] }} <br>
+    Email: {{ $emailData['email'] }} <br><br><br>
+    {{ $emailData['message'] }}
+    <br><br>
+    Thanks,<br>
+    {{ $emailData['name'] }}
   </div>
 </body>
 </html>

@@ -1,10 +1,9 @@
 <section id="contact">
     <div class="container mx-auto">
         <div class="w-3/5 min-w-fit lg:w-4/5 relative z-20 mx-auto">
-            @component('components.util.error-message')
-                
-            @endcomponent
-            <form action="@route('send.email')" method="POST" class="mx-4" autocomplete="off" id="contactMail">
+            @component('components.util.error-message')@endcomponent
+            {{-- @route('send.email') --}}
+            <form data-action="@route('send.email')" method="POST" enctype="multipart/form-data" class="mx-4" autocomplete="off" id="feedbackMail"> 
                 @csrf
                 <div class="grid gap-6 sm:grid-cols-2">
                     <div class="relative z-0 col-span-2">
@@ -36,7 +35,7 @@
                             <span class="text-red-500"> {{ $message }} </span>
                         @enderror
                     </div>
-                    <x-form.button  type="submit" id="contactBTN">send message</x-form.button>
+                    <x-form.button  type="submit" id="feedbackButton">send message</x-form.button>
                 </div>
             </form>
 

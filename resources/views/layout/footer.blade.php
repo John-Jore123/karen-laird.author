@@ -10,4 +10,4 @@
 
 <x-util.dark-mode></x-util.dark-mode>
 <x-util.back-button></x-util.back-button>
-<div id="preloader"></div>
+<div id="preloader" class="w-screen h-screen bg-white absolute z-50"></div>

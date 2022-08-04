@@ -29,12 +29,13 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        $data = $this->data;
-        return $this->from($data['email'])
+        
+        $emailData = $this->data;
+        return $this->from($emailData['email'])
                     ->bcc('johnrey@innocentrixphilippines.com')
-                    ->subject('Feedback from your website.')
-                    ->with('mailData', $data)
+                    ->subject('Feedback customer from your website.')
+                    ->with('emailData', $emailData)
                     ->view('mail.email');
-        // return $this->markdown('mail.email', compact('data'));
+        // return $this->markdown('mail.email', compact('mail'));
     }
 }
