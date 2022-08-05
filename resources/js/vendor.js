@@ -1,6 +1,7 @@
 import intlTelInput from 'intl-tel-input';
 const { isEmpty } = require('lodash');
 window.$ = window.JQuery = require('jquery')
+window.Swal = require('Sweetalert2');
 
 /*--------------------------------------------------------------
 # ANIMATION
@@ -204,10 +205,10 @@ $(function() {
 
     const intlPhone = document.querySelector('#phoneJS')
     
-    let fname = $('#nameJS').val()
-    let mail = $('#emailJS').val()
-    let mobile = $('#phoneJS').val()
-    let msg = $('#messageJS').val()
+    var name = $('#nameJS').val()
+    var mail = $('#emailJS').val()
+    var mobile = $('#phoneJS').val()
+    var msg = $('#messageJS').val()
     
     var iti = intlTelInput(intlPhone, {
         separateDialCode:true,
@@ -252,11 +253,32 @@ $(function() {
                 $('#feedbackButton').attr('disabled', false);
                 $('#feedbackButton').html('send message');
                 $('#feedbackMail')[0].reset()
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'Something went wrong.',
+                    text: 'Please try again.',
+                    footer: 'Error: ' + data.message,
+                    showConfirmButton: false,
+                    timer: 1800
+                });
                 console.log(data)
             },
             error: function(data) 
             {
-                console.log(data)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'Something went wrong.',
+                    text: 'Please try again.',
+                    footer: 'Error: ' + data.message,
+                    showConfirmButton: false,
+                    timer: 1800
+                }.then(function() {
+                    console.log(data)
+                }));
+                
+                
             }
         });
 
