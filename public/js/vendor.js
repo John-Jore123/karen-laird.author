@@ -29596,6 +29596,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var intl_tel_input__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(intl_tel_input__WEBPACK_IMPORTED_MODULE_0__);
 var _this = undefined;
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -29833,29 +29835,47 @@ headerObj.hamburger.addEventListener('click', function () {
 $(function () {
   validatePhone();
   var intlPhone = document.querySelector('#phoneJS');
-  var iti = intl_tel_input__WEBPACK_IMPORTED_MODULE_0___default()(intlPhone, {
+  var fname = $('#nameJS').val();
+  var mail = $('#emailJS').val();
+  var mobile = $('#phoneJS').val();
+  var msg = $('#messageJS').val();
+  var iti = intl_tel_input__WEBPACK_IMPORTED_MODULE_0___default()(intlPhone, _defineProperty({
     separateDialCode: true,
-    initialCountry: 'us' // onlyCountries: [ 'cn', 'us', 'ca', 'gr', 'es', 'pt', 'hu', 'fk' ]
-
-  });
+    initialCountry: 'us',
+    // onlyCountries: [ 'cn', 'us', 'ca', 'gr', 'es', 'pt', 'hu', 'fk' ]
+    autoHideDialCode: true,
+    // autoPlaceholder: "ON",
+    dropdownContainer: document.body,
+    formatOnDisplay: true,
+    hiddenInput: "full_number",
+    nationalMode: true,
+    placeholderNumberType: "MOBILE",
+    preferredCountries: ['US']
+  }, "separateDialCode", true));
   $("#feedbackMail").on('submit', function (event) {
-    event.preventDefault(); // let fname = $('#nameJS').val()
-    // let mail = $('#emailJS').val()
-    // let mobile = $('#phoneJS').val()
-    // let msg = $('#messageJS').val()
+    event.preventDefault();
+    var formData = new FormData(this);
+    var url = $(this).attr('data-action'); // iti.getNumber(intlTelInputUtils.numberFormat.E164)
+    // iti.isValidNumber()
 
-    iti.getNumber(intlTelInputUtils.numberFormat.E164);
-    iti.isValidNumber();
-    var url = $(this).attr('data-action');
+    console.log(iti.getNumber());
+    console.log(iti.isValidNumber());
     $.ajax({
       url: url,
       method: 'POST',
-      data: new FormData(this),
+      data: formData,
       dataType: 'JSON',
       contentType: false,
       cache: false,
       processData: false,
+      beforeSend: function beforeSend() {
+        $('#feedbackButton').attr('disabled', 'disabled');
+        $('#feedbackButton').html('sending...');
+      },
       success: function success(data) {
+        $('#feedbackButton').attr('disabled', false);
+        $('#feedbackButton').html('send message');
+        $('#feedbackMail')[0].reset();
         console.log(data);
       },
       error: function error(data) {

@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('email', 'ContactController@contactView')->name('sent.email');
+Route::get('email', 'ContactController@contactView')->name('send.email');
 Route::post('email', 'ContactController@contactEmail')->name('send.email');

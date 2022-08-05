@@ -203,32 +203,55 @@ $(function() {
     validatePhone()
 
     const intlPhone = document.querySelector('#phoneJS')
-    let iti = intlTelInput(intlPhone, {
+    
+    let fname = $('#nameJS').val()
+    let mail = $('#emailJS').val()
+    let mobile = $('#phoneJS').val()
+    let msg = $('#messageJS').val()
+    
+    var iti = intlTelInput(intlPhone, {
         separateDialCode:true,
         initialCountry: 'us',
         // onlyCountries: [ 'cn', 'us', 'ca', 'gr', 'es', 'pt', 'hu', 'fk' ]
+        autoHideDialCode: true,
+        // autoPlaceholder: "ON",
+        dropdownContainer: document.body,
+        formatOnDisplay: true,
+        hiddenInput: "full_number",
+        nationalMode: true,
+        placeholderNumberType: "MOBILE",
+        preferredCountries: ['US'],
+        separateDialCode: true
     })
     
     $("#feedbackMail").on('submit', function(event) { 
         event.preventDefault()
-        // let fname = $('#nameJS').val()
-        // let mail = $('#emailJS').val()
-        // let mobile = $('#phoneJS').val()
-        // let msg = $('#messageJS').val()
-        iti.getNumber(intlTelInputUtils.numberFormat.E164)
-        iti.isValidNumber()
+        let formData = new FormData(this)
         let url = $(this).attr('data-action')
+
+        // iti.getNumber(intlTelInputUtils.numberFormat.E164)
+        // iti.isValidNumber()
+        console.log(iti.getNumber())
+        console.log(iti.isValidNumber())
+
 
         $.ajax({
             url: url,
             method: 'POST',
-            data: new FormData(this),
+            data: formData,
             dataType: 'JSON',
             contentType: false,
             cache: false,
             processData: false,
+            beforeSend:function() {
+                $('#feedbackButton').attr('disabled', 'disabled');
+                $('#feedbackButton').html('sending...');
+            },
             success:function(data)
-            {
+            {            
+                $('#feedbackButton').attr('disabled', false);
+                $('#feedbackButton').html('send message');
+                $('#feedbackMail')[0].reset()
                 console.log(data)
             },
             error: function(data) 
