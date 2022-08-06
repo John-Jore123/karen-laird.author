@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="{{ asset('css/intlTelInput.min.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
-<body class="bg-minsk-500 dark:bg-minsk-900">
+<body class="bg-minsk-500 dark:bg-minsk-900 overflow-hidden md:overflow-auto ">
     {{-- overflow-hidden md:overflow-auto --}}
 
     <x-layout.sidebar></x-layout.sidebar>
         <main class="w-full h-full max-h-full">
-            {{-- <video class="video-background fixed top-0 right-0 bottom-0 left-0 w-full h-full object-cover" loop muted autoplay>
+            <video class="video-background fixed top-0 right-0 bottom-0 left-0 w-full h-full object-cover" loop muted autoplay>
                 <source src="{{ asset('images/mp4.mp4') }}" type="video/mp4">
-            </video>  --}}
+            </video> 
             {{ $slot }}
         </main>
     <x-layout.footer></x-layout.footer>

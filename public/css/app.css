@@ -1413,6 +1413,9 @@ p{
 .right-0{
   right: 0px;
 }
+.left-0{
+  left: 0px;
+}
 .bottom-1\/2{
   bottom: 50%;
 }
@@ -1421,9 +1424,6 @@ p{
 }
 .-right-28{
   right: -7rem;
-}
-.left-0{
-  left: 0px;
 }
 .right-9{
   right: 2.25rem;
@@ -1540,6 +1540,9 @@ p{
 }
 .inline-flex{
   display: inline-flex;
+}
+.table{
+  display: table;
 }
 .grid{
   display: grid;

@@ -33783,17 +33783,11 @@ headerObj.hamburger.addEventListener('click', function () {
 
 $(function () {
   validatePhone();
-  var intlPhone = document.querySelector('#phoneJS');
-  var name = $('#nameJS').val();
-  var mail = $('#emailJS').val();
-  var mobile = $('#phoneJS').val();
-  var msg = $('#messageJS').val();
+  var intlPhone = document.querySelector("#phoneJS");
   var iti = intl_tel_input__WEBPACK_IMPORTED_MODULE_0___default()(intlPhone, _defineProperty({
     separateDialCode: true,
     initialCountry: 'us',
-    // onlyCountries: [ 'cn', 'us', 'ca', 'gr', 'es', 'pt', 'hu', 'fk' ]
     autoHideDialCode: true,
-    // autoPlaceholder: "ON",
     dropdownContainer: document.body,
     formatOnDisplay: true,
     hiddenInput: "full_number",
@@ -33803,120 +33797,93 @@ $(function () {
   }, "separateDialCode", true));
   $("#feedbackMail").on('submit', function (event) {
     event.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('data-action'); // iti.getNumber(intlTelInputUtils.numberFormat.E164)
-    // iti.isValidNumber()
+    var name = $('#nameJS').val();
+    var email = $('#emailJS').val();
+    var mobile = $('#phoneJS').val();
+    var message = $('#messageJS').val();
+    var url = $(this).attr('data-action');
+    var formX = new FormData(this);
+    formX.append("phone", iti.getNumber());
 
-    console.log(iti.getNumber());
-    console.log(iti.isValidNumber());
-    $.ajax({
-      url: url,
-      method: 'POST',
-      data: formData,
-      dataType: 'JSON',
-      contentType: false,
-      cache: false,
-      processData: false,
-      beforeSend: function beforeSend() {
-        $('#feedbackButton').attr('disabled', 'disabled');
-        $('#feedbackButton').html('sending...');
-      },
-      success: function success(data) {
-        $('#feedbackButton').attr('disabled', false);
-        $('#feedbackButton').html('send message');
-        $('#feedbackMail')[0].reset();
-        Swal.fire({
-          position: 'center',
-          icon: 'error',
-          title: 'Something went wrong.',
-          text: 'Please try again.',
-          footer: 'Error: ' + data.message,
-          showConfirmButton: false,
-          timer: 1800
-        });
-        console.log(data);
-      },
-      error: function error(data) {
-        Swal.fire({
-          position: 'center',
-          icon: 'error',
-          title: 'Something went wrong.',
-          text: 'Please try again.',
-          footer: 'Error: ' + data.message,
-          showConfirmButton: false,
-          timer: 1800
-        }.then(function () {
-          console.log(data);
-        }));
+    if (!regEx_patterns.email.test(email)) {
+      $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email format.');
+      $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
+    }
+
+    if (!name || !message || !email) {
+      if (name == '') {
+        validateName();
       }
-    }); // $.ajax({
-    //     url: "/index",
-    //     type:"POST",
-    //     data:{
-    //         "_token": "{{ csrf_token() }}",
-    //         name:fname,
-    //         email:mail,
-    //         mobile:mobile,
-    //         message:msg,
-    //     },
-    //     success:function(response){
-    //         console.log(response);
-    //         if (response) {
-    //             alert(response.success); 
-    //             $("#feedbackMail")[0].reset(); 
-    //         }
-    //     },
-    //     error: function(response) {
-    //         // alert(response.responseJSON.errors.name);
-    //         // alert(response.responseJSON.errors.email);
-    //         // alert(response.responseJSON.errors.mobile);
-    //         // alert(response.responseJSON.errors.message);
-    //     }
-    // });
-    // let url = $(this).attr('action');
-    // $.post(url, {
-    //     '_token': $("#token").val(),
-    //     name: $("#nameJS").val(),
-    //     email: $("#emailJS").val(),
-    //     phone: $("#phoneJS").val(),
-    //     message: $("#messageJS").val()
-    // }, function (response) {
-    //     if(response.code == 400){
-    //         $("#feedbackButton").attr('disabled', false);
-    //         let error = '<span class="alert alert-danger">'+response.msg+'</span>';
-    //         $("#res").html(error);
-    //     }else if(response.code == 200){
-    //         $("#feedbackButton").attr('disabled', false);
-    //         let success = '<span class="alert alert-success">'+response.msg+'</span>';
-    //         $("#res").html(success);
-    //     }
-    // });
-    // if(!regEx_patterns.email.test(mail)) {
-    //     $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email format.')
-    //     $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
-    // }
-    // if(!fname || !msg || !mail) {
-    //     if(fname == '') {
-    //         validateName()
-    //     } 
-    //     if(mail == '') {
-    //         validateEmail()
-    //     }
-    //     if(msg == '') {
-    //         validateTextarea()
-    //     }
-    // } 
-    // else if(!regEx_patterns.email.test(mail)) {
-    //     $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email format.')
-    //     $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
-    //     validateEmail()
-    // } 
-    // else if(!regEx_patterns.phone.test(mobile)) {
-    //     $("#phoneLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">phone_android</i>')
-    //     $('#phoneJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300")
-    // } 
-    // else {
-    // }
+
+      if (email == '') {
+        validateEmail();
+      }
+
+      if (message == '') {
+        validateTextarea();
+      }
+    } else if (!regEx_patterns.email.test(email)) {
+      $("#emailLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">email</i> Invalid email format.');
+      $('#emailJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
+      validateEmail();
+    } else if (!regEx_patterns.phone.test(mobile)) {
+      $("#phoneLabel").removeClass("text-white").addClass("text-red-300 dark:text-red-300").html('<i class="material-icons min-w-fit min-h-fit mr-2">phone_android</i>');
+      $('#phoneJS').removeClass("border-white").addClass("border-red-300 dark:border-red-300");
+    } else {
+      $.ajax({
+        url: url,
+        method: 'POST',
+        data: formX,
+        dataType: 'JSON',
+        contentType: false,
+        cache: false,
+        processData: false,
+        beforeSend: function beforeSend() {
+          $('#feedbackButton').attr('disabled', 'disabled');
+          $('#feedbackButton').html('sending...');
+        },
+        success: function success(response) {
+          $('#feedbackButton').attr('disabled', false);
+          $('#feedbackButton').html('send message');
+          $('#feedbackMail')[0].reset();
+
+          if (response.code == 200) {
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Feedback sent.',
+              text: 'Thank you for giving a feedback toward my works.',
+              showConfirmButton: false,
+              timer: 1800
+            });
+          }
+
+          if (response.code == 400) {
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Something went wrong.',
+              text: 'Please try again.',
+              showConfirmButton: false,
+              timer: 1800
+            });
+          }
+        },
+        error: function error(response) {
+          $('#feedbackButton').attr('disabled', false);
+          $('#feedbackButton').html('send message');
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Something went wrong.',
+            text: 'Please try again.',
+            footer: 'Error: ' + response.message,
+            showConfirmButton: false,
+            timer: 1800
+          });
+        }
+      });
+    }
   });
 });
 
