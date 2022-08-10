@@ -1,250 +1,186 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-<title>Mailto</title>
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-<style type="text/css">
-html { -webkit-text-size-adjust: none; -ms-text-size-adjust: none;}
-
-	@media only screen and (min-device-width: 750px) {
-		.table750 {width: 750px !important;}
-	}
-	@media only screen and (max-device-width: 750px), only screen and (max-width: 750px){
-      table[class="table750"] {width: 100% !important;}
-      .mob_b {width: 93% !important; max-width: 93% !important; min-width: 93% !important;}
-      .mob_b1 {width: 100% !important; max-width: 100% !important; min-width: 100% !important;}
-      .mob_left {text-align: left !important;}
-      .mob_soc {width: 50% !important; max-width: 50% !important; min-width: 50% !important;}
-      .mob_menu {width: 50% !important; max-width: 50% !important; min-width: 50% !important; box-shadow: inset -1px -1px 0 0 rgba(255, 255, 255, 0.2); }
-      .mob_center {text-align: center !important;}
-      .top_pad {height: 15px !important; max-height: 15px !important; min-height: 15px !important;}
-      .mob_pad {width: 15px !important; max-width: 15px !important; min-width: 15px !important;}
-      .mob_div {display: block !important;}
- 	}
-   @media only screen and (max-device-width: 550px), only screen and (max-width: 550px){
-      .mod_div {display: block !important;}
-   }
-	.table750 {width: 750px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+        table, td, div, h1, p {font-family: 'Poppins', sans-serif;}
+    </style>
 </head>
-<body style="margin: 0; padding: 0;">
+<body style="margin: 0;padding: 0;">
+    <table role="presentation" style="width: 100%;border-collapse: collapse;border: 0;border-spacing: 0;background:#f5f5f5;">
+        <tr>
+        <td align="center" style="padding: 0;mso-line-height-rule:exactly;padding: 100px 0;">
 
-<table cellpadding="0" cellspacing="0" border="0" width="100%" style="background: #f3f3f3; min-width: 350px; font-size: 1px; line-height: normal;">
- 	<tr>
-   	<td align="center" valign="top">   			
-   		<!--[if (gte mso 9)|(IE)]>
-         <table border="0" cellspacing="0" cellpadding="0">
-         <tr><td align="center" valign="top" width="750"><![endif]-->
-   		<table cellpadding="0" cellspacing="0" border="0" width="750" class="table750" style="width: 100%; max-width: 750px; min-width: 350px; background: #f3f3f3;">
-   			<tr>
-                <td class="mob_pad" width="25" style="width: 25px; max-width: 25px; min-width: 25px;">&nbsp;</td>
-   				<td align="center" valign="top" style="background: #ffffff;">
+            <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr style="padding: 0;margin: 0;">
+                    <td style="border-radius: 20px;overflow: hidden;">
 
-                    
-                <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100% !important; min-width: 100%; max-width: 100%; background: #f3f3f3;">
-                    <tr>
-                    <td align="right" valign="top">
-                        <div class="top_pad" style="height: 25px; line-height: 25px; font-size: 23px;">&nbsp;</div>
-                    </td>
-                    </tr>
-                </table>
-
-                <!-- ### LOGO ###  -->
-                <table cellpadding="0" cellspacing="0" border="0" width="88%" style="width: 88% !important; min-width: 88%; max-width: 88%;">
-                    <tr>
-                    <td align="left" valign="top">
-                        <div style="height: 39px; line-height: 39px; font-size: 37px;">&nbsp;</div>
-                        <a href="#" target="_blank" style="display: block; max-width: 128px;">
-                            <img src="https://pageturner.us/images/main-logo.png" alt="img" width="128" border="0" style="display: block; width: 128px;" />
-                        </a>
-                        <div style="height: 73px; line-height: 73px; font-size: 71px;">&nbsp;</div>
-                    </td>
-                    </tr>
-                </table>
-
-                <!-- ### EMAIL CONTENT ### -->
-                <table cellpadding="0" cellspacing="0" border="0" width="88%" style="width: 88% !important; min-width: 88%; max-width: 88%;">
-                    <tr>
-                    <td align="left" valign="top">
-                        <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 52px; line-height: 60px; font-weight: 300; letter-spacing: -1.5px;">
-                            <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 42px; line-height: 60px; font-weight: 300; letter-spacing: -1.5px;">My name is {{ $emailData['name'] }},</span>
-                        </font>
-                        <div style="height: 33px; line-height: 33px; font-size: 31px;">&nbsp;</div>
-                        <font face="'Source Sans Pro', sans-serif" color="#585858" style="font-size: 24px; line-height: 32px;">
-                            <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #585858; font-size: 22px; line-height: 32px;">My email is {{ $emailData['email'] }}</span>
-                        </font>
-                        <font face="'Source Sans Pro', sans-serif" color="#585858" style="font-size: 24px; line-height: 32px;">
-                        <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #585858; font-size: 22px; line-height: 32px;">My phone is {{ $emailData['phone'] }}</span>
-                        </font>
-                        <div style="height: 20px; line-height: 20px; font-size: 18px;">&nbsp;</div>
-                        <font face="'Source Sans Pro', sans-serif" color="#585858" style="font-size: 24px; line-height: 32px;">
-                            <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #585858; font-size: 22px; line-height: 32px;">My Feedback are {{ $data['message'] }}</span>
-                        </font>
-                        <div style="height: 33px; line-height: 33px; font-size: 31px;">&nbsp;</div>
-                        <div style="height: 75px; line-height: 75px; font-size: 73px;">&nbsp;</div>
-                    </td>
-                    </tr>
-                </table>
-
-                <table cellpadding="0" cellspacing="0" border="0" width="90%" style="width: 90% !important; min-width: 90%; max-width: 90%; border-width: 1px; border-style: solid; border-color: #e8e8e8; border-bottom: none; border-left: none; border-right: none;">
-                    <tr>
-                    <td align="left" valign="top">
-                        <div style="height: 15px; line-height: 15px; font-size: 13px;">&nbsp;</div>
-                    </td>
-                    </tr>
-                </table>
-
-                <table cellpadding="0" cellspacing="0" border="0" width="88%" style="width: 88% !important; min-width: 88%; max-width: 88%;">
-                    <tr>
-                    <td align="center" valign="top">
-                        <!--[if (gte mso 9)|(IE)]>
-                        <table border="0" cellspacing="0" cellpadding="0">
-                        <tr><td align="center" valign="top" width="50"><![endif]-->
-                        <div style="display: inline-block; vertical-align: top; width: 50px;">
-                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100% !important; min-width: 100%; max-width: 100%;">
-                                <tr>
-                                <td align="center" valign="top">
-                                    <div style="height: 13px; line-height: 13px; font-size: 11px;">&nbsp;</div>
-                                    <div style="display: block; max-width: 50px;">
-                                        <img src="https://11017-1.b.cdn12.com/mail_template/rad.png" alt="img" width="50" border="0" style="display: block; width: 50px;" />
-                                    </div>
-                                </td>
-                                </tr>
-                            </table>
-                        </div><!--[if (gte mso 9)|(IE)]></td><td align="left" valign="top" width="390"><![endif]--><div class="mob_div" style="display: inline-block; vertical-align: top; width: 62%; min-width: 260px;">
-                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100% !important; min-width: 100%; max-width: 100%;">
-                                <tr>
-                                <td width="18" style="width: 18px; max-width: 18px; min-width: 18px;">&nbsp;</td>
-                                <td class="mob_center" align="left" valign="top">
-                                    <div style="height: 13px; line-height: 13px; font-size: 11px;">&nbsp;</div>
-                                    <font face="'Source Sans Pro', sans-serif" color="#000000" style="font-size: 19px; line-height: 23px; font-weight: 600;">
-                                        <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #000000; font-size: 19px; line-height: 23px; font-weight: 600;">
-                                        </span>
-                                    </font>
-                                    <div style="height: 1px; line-height: 1px; font-size: 1px;">&nbsp;</div>
-                                    <font face="'Source Sans Pro', sans-serif" color="#7f7f7f" style="font-size: 19px; line-height: 23px;">
-                                        <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #7f7f7f; font-size: 19px; line-height: 23px;">Creative Director at Mailto</span>
-                                    </font>
-                                </td>
-                                <td width="18" style="width: 18px; max-width: 18px; min-width: 18px;">&nbsp;</td>
-                                </tr>
-                            </table>
-                        </div><!--[if (gte mso 9)|(IE)]></td><td align="left" valign="top" width="177"><![endif]--><div style="display: inline-block; vertical-align: top; width: 177px;">
-                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100% !important; min-width: 100%; max-width: 100%;">
-                                <tr>
-                                <td align="center" valign="top">
-                                    <div style="height: 13px; line-height: 13px; font-size: 11px;">&nbsp;</div>
-                                    <div style="display: block; max-width: 177px;">
-                                        <img src="https://pageturner.us/images/main-logo.png" alt="img" width="177" border="0" style="display: block; width: 177px; max-width: 100%;" />
-                                    </div>
-                                </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--[if (gte mso 9)|(IE)]>
-                        </td></tr>
-                        </table><![endif]-->
-                        <div style="height: 30px; line-height: 30px; font-size: 28px;">&nbsp;</div>
-                    </td>
-                    </tr>
-                </table>
-
-                <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100% !important; min-width: 100%; max-width: 100%; background: #f3f3f3;">
-                    <tr>
-                    <td align="center" valign="top">
-                        <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div>
-                        <table cellpadding="0" cellspacing="0" border="0" width="88%" style="width: 88% !important; min-width: 88%; max-width: 88%;">
+                        
+                        <table role="presentation" bgcolor="#fff" style="width: 750px;border-collapse: collapse;border-spacing: 0;text-align: center;">
                             <tr>
-                                <td align="center" valign="top">
-                                <table cellpadding="0" cellspacing="0" border="0" width="78%" style="min-width: 300px;">
-                                    <tr>
-                                        <td align="center" valign="top" width="23%">                                             
-                                            <a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                            <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                                <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">HELP&nbsp;CENTER</span>
-                                            </font>
-                                            </a>
-                                        </td>
-                                        <td align="center" valign="top" width="10%">
-                                            <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 17px; line-height: 17px; font-weight: bold;">
-                                            <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 17px; font-weight: bold;">&bull;</span>
-                                            </font>
-                                        </td>
-                                        <td align="center" valign="top" width="23%">
-                                            <a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                            <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                                <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">SUPPORT&nbsp;24/7</span>
-                                            </font>
-                                            </a>
-                                        </td>
-                                        <td align="center" valign="top" width="10%">
-                                            <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 17px; line-height: 17px; font-weight: bold;">
-                                            <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 17px; font-weight: bold;">&bull;</span>
-                                            </font>
-                                        </td>
-                                        <td align="center" valign="top" width="23%">
-                                            <a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                            <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                                <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">ACCOUNT</span>
-                                            </font>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div>
-                                <font face="'Source Sans Pro', sans-serif" color="#868686" style="font-size: 17px; line-height: 20px;">
-                                    <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 17px; line-height: 20px;">Copyright &copy; {{ date('Y') }} Mailto. All&nbsp;Rights&nbsp;Reserved. We&nbsp;appreciate&nbsp;you!</span>
-                                </font>
-                                <div style="height: 3px; line-height: 3px; font-size: 1px;">&nbsp;</div>
-                                <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 17px; line-height: 20px;">
-                                    <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px;"><a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">help@mailto.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">1(800)232-90-26</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">Unsubscribe</a></span>
-                                </font>
-                                <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
-                                <table cellpadding="0" cellspacing="0" border="0">
-                                    <tr>
-                                        <td align="center" valign="top">
-                                            <a href="#" target="_blank" style="display: block; max-width: 19px;">
-                                            <img src="https://11017-1.b.cdn12.com/mail_template/soc_1.png" alt="img" width="19" border="0" style="display: block; width: 19px;" />
-                                            </a>
-                                        </td>
-                                        <td width="45" style="width: 45px; max-width: 45px; min-width: 45px;">&nbsp;</td>
-                                        <td align="center" valign="top">
-                                            <a href="#" target="_blank" style="display: block; max-width: 18px;">
-                                            <img src="https://11017-1.b.cdn12.com/mail_template/soc_2.png" alt="img" width="18" border="0" style="display: block; width: 18px;" />
-                                            </a>
-                                        </td>
-                                        <td width="45" style="width: 45px; max-width: 45px; min-width: 45px;">&nbsp;</td>
-                                        <td align="center" valign="top">
-                                            <a href="#" target="_blank" style="display: block; max-width: 21px;">
-                                            <img src="https://11017-1.b.cdn12.com/mail_template/soc_3.png" alt="img" width="21" border="0" style="display: block; width: 21px;" />
-                                            </a>
-                                        </td>
-                                        <td width="45" style="width: 45px; max-width: 45px; min-width: 45px;">&nbsp;</td>
-                                        <td align="center" valign="top">
-                                            <a href="#" target="_blank" style="display: block; max-width: 25px;">
-                                            <img src="https://11017-1.b.cdn12.com/mail_template/soc_4.png" alt="img" width="25" border="0" style="display: block; width: 25px;" />
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
+                                <td style="padding:0;background-color: #372802; height: 150px;padding: 0 50px;">
+                                    <img src="https://pageturner.us/images/main-logo.png" alt="PageTurner, Press and Media Logo" width="180" style="height: auto;display: block;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="padding: 50px">
+                                    
+                                    <table role="presentation" border="0" width="100%" cellpadding="0" cellspacing="0" align="left" style="height: auto;">
+                                        <tr>
+                                            <td style="padding: 0;margin: 0;">
+                                                <h1>
+                                                    {{ $emailData['name'] }}
+                                                </h1>
+                                                <h3>
+                                                    Email address: {{ $emailData['email'] }}
+                                                </h3>
+                                                <h3>
+                                                    Contact number: {{ $emailData['phone'] }}
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr><td><hr style="background-color: #F7BB42; height: 5px;border: 0;"></td></tr>
+
+                                        <tr>
+                                            <td style="padding: 0;margin: 0;">
+                                                <p>
+                                                    {{ $emailData['message'] }}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        
+                                    </table>
+
+                                </td>
+                            </tr>
+                            <tr><td style="line-height:30px;height:50px;mso-line-height-rule:exactly;">&nbsp;</td></tr>
+                            <tr>
+                                <td style="padding:0 50px">
+                                    <hr style="background-color: #F7BB42; height: 2px;border: 0;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" width="100%" style="padding: 20px 50px;"> 
+                                        <tr>
+                                            <td align="center" bgcolor="#372802" style="border-radius: 50%;padding: 8px;">
+                                                <img src="{{ asset('images/logo.png') }}" alt="" style="width: 20px;height: 20px;display: inline-block;object-fit: cover;position: relative;">
+                                            </td>
+                                            <td style="padding: 0 0 0 10px;margin: 0;">
+                                                <a href="#" style="display: inline-block;">
+                                                    {{ config('app.name') }}
+                                                </a>
+                                            </td>
+                                            <td align="right">
+                                                <img src="https://pageturner.us/images/main-logo.png" alt="PageTurner, Press and Media Logo" width="200" style="height: auto;display: inline-block;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table> 
+
+                    </td>
+                </tr>
+            </table>
+            <div style="line-height:20px;height:20px;mso-line-height-rule:exactly;">&nbsp;</div>
+            <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr style="padding: 0;margin: 0;">
+                    <td style="overflow: hidden;">
+                       
+                        <table role="presentation" cellpadding="0" cellspacing="0" width="750px">
+                            <tr>
+                                <td align="center" style="width: 100%;">
+
+                                    <table role="presentation" width="80%">
+                                        <tr>
+                                            <td align="center">
+                                                <p style="font-size: 12px; margin: 0;padding: 0;">Copyright © 2022 {{ config('app.name') }}. All Rights Reserved. We appreciate you!</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <div>
+                                                    <a href="mailto:info@pageturner.us" style="color: #e89506;text-decoration: none;">info@pageturner.us</a>
+                                                    <span style="padding: 0 10px;color: #e89506;">|</span>
+                                                    <a href="tel:1-888-447-9651" style="color: #e89506;text-decoration: none;">1-888-447-9651</a>
+                                                    <span style="padding: 0 10px;color: #e89506;">|</span>
+                                                    <a href="https://pageturner.us/" target="_blank" rel="noopener noreferrer" style="color: #e89506;text-decoration: none;">pagetuner.us</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            </tr>
+                            <tr><td style="line-height:20px;height:20px;mso-line-height-rule:exactly;">&nbsp;</td></tr>
+                            <tr>
+                                <td align="center">
+                                    
+                                    <table role="presentation" width="40%">
+                                        <tr align="center">
+                                            <td>
+                                                <a href="https://www.facebook.com/pageturnerpressandmediallc" target="_blank" rel="noopener noreferrer" style="display: block;">
+                                                    <img src="https://pageturner.us/images/facebook.png" alt="facebook logo" width="25">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="https://www.facebook.com/pageturnerpressandmediallc" target="_blank" rel="noopener noreferrer" style="display: block;">
+                                                    <img src="https://pageturner.us/images/twitter.png" alt="twitter logo" width="25">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="https://www.instagram.com/pageturnerllc/" target="_blank" rel="noopener noreferrer" style="display: block;">
+                                                    <img src="https://pageturner.us/images/instagram.png" alt="instagram logo" width="25">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="https://www.youtube.com/channel/UClotpn1jqpGlvkHl803DN8w" target="_blank" rel="noopener noreferrer" style="display: block;">
+                                                    <img src="https://pageturner.us/images/youtube.png" alt="youtube logo" width="25">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="https://www.linkedin.com/company/pageturnerpressandmedia" target="_blank" rel="noopener noreferrer" style="display: block;">
+                                                    <img src="https://pageturner.us/images/linkedin.png" alt="linkedin logo" width="25">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="https://www.pinterest.ph/pageturnerllc/" target="_blank" rel="noopener noreferrer" style="display: block;">
+                                                    <img src="https://pageturner.us/images/pinterest.png" alt="pinterest logo" width="25">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="https://pageturnerpressandmedia.quora.com/" target="_blank" rel="noopener noreferrer" style="display: block;">
+                                                    <img src="https://pageturner.us/images/quora.png" alt="quora logo" width="25">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+
                                 </td>
                             </tr>
                         </table>
-                    </td>
-                    </tr>
-                </table>  
 
-               </td>
-               <td class="mob_pad" width="25" style="width: 25px; max-width: 25px; min-width: 25px;">&nbsp;</td>
-            </tr>
-         </table>
-         <!--[if (gte mso 9)|(IE)]>
-         </td></tr>
-         </table><![endif]-->
-      </td>
-   </tr>
-</table>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+        </tr>
+    </table>
 </body>
 </html>
