@@ -4,10 +4,9 @@
     <nav class="nav-menu" id="navbar">
         <ul>
             @foreach ($navbarItems as $item)
-            <?php //dd($navbarItems) ?>
                 <x-layout.navbar-item :href="$item['href']"
                                       :image="$item['image']"
-                                      :label="$item['label']" />
+                                      :label="$item['label']"></x-layout.navbar-item>
             @endforeach
         </ul>
     </nav>   

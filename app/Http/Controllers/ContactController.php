@@ -39,7 +39,7 @@ class ContactController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => ['required'],
-            'phone' => ['numeric','regex:/^([0-9\s\-\+\(\)]*)$/','min:15'],
+            // 'phone' => ['numeric','regex:/^([0-9\s\-\+\(\)]*)$/','min:15'], //to pass data w/o any field input or uncomment it to pass data
             'email' => ['required','email:strict'],
             'message' => ['required']
         ]);

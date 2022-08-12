@@ -51,6 +51,6 @@ class SideBar extends Component
      */
     public function render()
     {
-        return view('layout.sidebar');
+        return view('components.layout.sidebar');
     }
 }

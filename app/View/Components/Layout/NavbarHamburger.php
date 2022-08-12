@@ -23,6 +23,6 @@ class NavbarHamburger extends Component
      */
     public function render()
     {
-        return view('layout.navbar-hamburger');
+        return view('components.layout.navbar-hamburger');
     }
 }

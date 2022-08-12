@@ -17,15 +17,15 @@
 </head>
 <body class="bg-minsk-500 dark:bg-minsk-900 overflow-hidden md:overflow-auto ">
     {{-- overflow-hidden md:overflow-auto --}}
-
-    <x-layout.sidebar></x-layout.sidebar>
+    
+    <x-layout.sidebar />
         <main class="w-full h-full max-h-full">
             <video class="video-background fixed top-0 right-0 bottom-0 left-0 w-full h-full object-cover" loop muted autoplay>
                 <source src="{{ asset('images/mp4.mp4') }}" type="video/mp4">
             </video> 
-            {{ $slot }}
+            @yield('content')
         </main>
-    <x-layout.footer></x-layout.footer>
+    <x-layout.footer />
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>

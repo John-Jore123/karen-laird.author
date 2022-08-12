@@ -24,6 +24,6 @@ class NavbarItem extends Component
      */
     public function render()
     {
-        return view('layout.navbar-item');
+        return view('components.layout.navbar-item');
     }
 }

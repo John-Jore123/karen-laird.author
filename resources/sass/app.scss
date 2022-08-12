@@ -14,21 +14,24 @@
     html {
         @apply font-lead;
     }
-    ::-webkit-scrollbar {
-        @apply w-2.5;
+    html, body {
+        ::-webkit-scrollbar {
+            @apply w-2.5;
+        }
+        /* Track */
+        ::-webkit-scrollbar-track {
+            @apply bg-minsk-400 dark:bg-dark-400 shadow-inner rounded;
+        }
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            @apply bg-white rounded;
+        }
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            @apply bg-minsk-900 dark:bg-minsk-500;
+        }
     }
-    /* Track */
-    ::-webkit-scrollbar-track {
-        @apply bg-minsk-400 dark:bg-dark-400 shadow-inner rounded;
-    }
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        @apply bg-white rounded;
-    }
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        @apply bg-minsk-900 dark:bg-minsk-500;
-    }
+    
 }
 @layer components {
     // #top {
