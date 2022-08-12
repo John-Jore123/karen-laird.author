@@ -13,7 +13,7 @@ class SideBar extends Component
      *
      * @return void
      */
-    public function __construct($navbarItems)
+    public function __construct()
     {
         $this->navbarItems = [
             [   
@@ -51,6 +51,7 @@ class SideBar extends Component
      */
     public function render()
     {
-        return view('components.layout.sidebar');
+        $navbarItems = $this->navbarItems;
+        return view('components.layout.sidebar',compact('navbarItems'));
     }
 }
