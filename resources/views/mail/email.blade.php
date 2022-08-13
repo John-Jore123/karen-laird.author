@@ -42,13 +42,16 @@
                                         <tr>
                                             <td style="padding: 0;margin: 0;">
                                                 <h1>
-                                                    {{ $emailData['name'] }}
+                                                    {{-- {{ $emailData['name'] }} --}}
+                                                    {{ $name }}
                                                 </h1>
                                                 <h3>
-                                                    Email address: {{ $emailData['email'] }}
+                                                    {{-- Email address: {{ $emailData['email'] }} --}}
+                                                    {{ $email }}
                                                 </h3>
                                                 <h3>
-                                                    Contact number: {{ $emailData['phone'] }}
+                                                    {{-- Contact number: {{ $emailData['phone'] }} --}}
+                                                    {{ $phone }}
                                                 </h3>
                                             </td>
                                         </tr>
@@ -58,7 +61,8 @@
                                         <tr>
                                             <td style="padding: 0;margin: 0;">
                                                 <p>
-                                                    {{ $emailData['message'] }}
+                                                    {{-- {{ $emailData['message'] }} --}}
+                                                    {{ $message }}
                                                 </p>
                                             </td>
                                         </tr>

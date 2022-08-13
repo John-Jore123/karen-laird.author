@@ -30,7 +30,7 @@ class ContactMail extends Mailable
     public function build()
     {
         $emailData = $this->data;
-        return $this->from($emailData['email'])
+        return $this->from($emailData['email'], $emailData['name'])
                     ->bcc('johnrey@innocentrixphilippines.com')
                     ->subject('Feedback customer from your website.')
                     ->with('emailData', $emailData)

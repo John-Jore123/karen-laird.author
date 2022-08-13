@@ -51,7 +51,6 @@ class SideBar extends Component
      */
     public function render()
     {
-        $navbarItems = $this->navbarItems;
-        return view('components.layout.sidebar',compact('navbarItems'));
+       return view('components.layout.sidebar');
     }
 }
