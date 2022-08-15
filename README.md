@@ -17,3 +17,12 @@ PageTurner, Press and Media
 
 ## Developer:
 JORE
+
+Note: 
+.env for gmail sending
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=johnrey@innocentrixphilippines.com
+MAIL_PASSWORD=buljtbyrtfswkjbx
+MAIL_ENCRYPTION=tls

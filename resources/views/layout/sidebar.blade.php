@@ -1,5 +1,3 @@
-
-
 <header>
     <x-layout.navbar-hamburger></x-layout.navbar-hamburger>
 
